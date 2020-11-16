@@ -1,0 +1,25 @@
+{
+    "name": "mydailyworkflow",
+    "version": "1.0.0",
+    "description": "\"\"",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lengmolehongyan/MyDailyWorkflow.git"
+    },
+    "author": "layne",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lengmolehongyan/MyDailyWorkflow/issues"
+    },
+    "homepage": "https://github.com/lengmolehongyan/MyDailyWorkflow#readme",
+    "dependencies": {
+        "crypto-js": "^4.0.0",
+        "got": "^11.8.0",
+        "minimist": "^1.2.5",
+        "tough-cookie": "^4.0.0"
+    }
+}

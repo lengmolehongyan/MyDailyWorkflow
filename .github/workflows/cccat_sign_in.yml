@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+name: cccat_sign_in
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: '0 1 * * *'
+    watch:
+        types: started
+    repository_dispatch:
+        types: notify
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        if: github.event.repository.owner.id == github.event.sender.id
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: '运行签到脚本'
+              run: |
+                  cd ./scripts
+                  sh cccat_sign_in.sh
+              env:
+                  DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+                  DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+                  COOKIE_826: ${{ secrets.COOKIE_826 }}
+                  COOKIE_LENGMO: ${{ secrets.COOKIE_LENGMO }}
