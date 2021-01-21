@@ -11,7 +11,7 @@ on:
         types: notify
 
 jobs:
-    build:
+    build1:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
         steps:
